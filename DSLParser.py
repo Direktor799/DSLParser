@@ -62,6 +62,7 @@ class Parser:
                 var = get_value(current_node.value)
                 is_pattern_matched = False
                 current_child = current_node.child
+                # 匹配对应分支，跳转执行
                 while current_child != None and current_child.command != None:
                     if current_child.value == "other" or var == get_value(current_child.value):
                         current_node = current_child.child
