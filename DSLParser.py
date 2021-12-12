@@ -44,8 +44,7 @@ class Parser:
     def execute(self):
         symbols = {}
         # 获取变量的值或字面值
-        get_value = lambda v: v[1:-
-                                1] if v[0] == "\"" and v[-1] == "\"" else symbols[v]
+        get_value = lambda v: v[1:-1] if v[0] == "\"" and v[-1] == "\"" else symbols[v]
         current_node = self.parse_tree.child
         while(True):
             if current_node.command == "end":
@@ -54,6 +53,8 @@ class Parser:
                 current_node = self.parse_tree.child
                 continue
             elif current_node.command == "print":
+                print(get_value(current_node.value), end='')
+            elif current_node.command == "println":
                 print(get_value(current_node.value))
             elif current_node.command == "input":
                 symbols[current_node.value] = input()
