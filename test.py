@@ -14,8 +14,8 @@ def test_pipeline(s1, s2):
     with open(TMP_OUTPUT_FILE, "r") as f:
         res = f.read().split('\n')
     # delete tmpfiles
-    os.system("rm {}".format(TMP_INPUT_FILE))
-    os.system("rm {}".format(TMP_OUTPUT_FILE))
+    os.remove(TMP_INPUT_FILE)
+    os.remove(TMP_OUTPUT_FILE)
     # test1
     if res[0] != str(s1):
         return False

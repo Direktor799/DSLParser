@@ -44,11 +44,12 @@ class Parser:
     def execute(self):
         symbols = {}
         # 获取变量的值或字面值
-        get_value = lambda v: v[1:-1] if v[0] == "\"" and v[-1] == "\"" else symbols[v]
+        get_value = lambda v: v[1:-
+                                1] if v[0] == "\"" and v[-1] == "\"" else symbols[v]
         current_node = self.parse_tree.child
         while(True):
             if current_node.command == "end":
-                return
+                break
             elif current_node.command == "retry":
                 current_node = self.parse_tree.child
                 continue
@@ -81,6 +82,7 @@ class Parser:
                 current_node = current_node.brother
             else:
                 current_node = current_node.parent
+        print()
 
 
 if __name__ == "__main__":

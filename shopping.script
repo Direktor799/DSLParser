@@ -15,9 +15,11 @@ switch $1
                 println "亲，我们暂无男生款短裙"
             case "2"
                 println "反转了，原来都是均码"
+        println ""
         retry
     case "2"
         println "不包邮（新疆、西藏等偏远地区除外）"
+        println ""
         retry
     case "3"
         println "不许退不许退不许退！"
@@ -25,11 +27,14 @@ switch $1
         end
     case "bye"
         println "祝您生活愉快"
+        println ""
     case other
         println "会扣字儿不？"
+        println ""
         retry
 println "请对我的服务打分"
 input $3
 print "本次服务评分为"
 println $3
+println ""
 println "再见"
